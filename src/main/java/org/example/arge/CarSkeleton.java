@@ -1,18 +1,38 @@
 package org.example.arge;
 
 public class CarSkeleton {
-    private  String name;
-    private  String description;
 
-    public CarSkeleton(String description, String name) {
-        this.description = description;
-        this.name = name;
-    }
+    private String name;
+    private String description;
 
     public CarSkeleton() {
+        this.name = "Unknown";
+        this.description = "No description";
     }
 
-    public void startEngine(){}
-    public void  drive(){}
-    public void runEngine(){}
+    public CarSkeleton(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String startEngine() {
+        return getClass().getSimpleName() + " is starting its engine";
+    }
+
+    public String drive() {
+        runEngine();
+        return getClass().getSimpleName() + " is driving";
+    }
+
+    protected String runEngine() {
+        return getClass().getSimpleName() + " engine is running";
+    }
 }
